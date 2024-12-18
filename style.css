@@ -1,0 +1,78 @@
+
+:root {
+
+    --color-p : #252D2A;
+    --color-s : #EFF8E2;
+    --color-a : red;
+}
+
+.bg-color-p {
+
+    background-color: var(--color-p);
+}
+
+.bg-color-s {
+    
+    background-color: var(--color-s);
+}
+
+.bg-color-a {
+    
+    background-color: var(--color-a);
+}
+
+.color-p {
+
+    color: var(--color-p);
+}
+
+.color-s {
+    
+    color: var(--color-s) !important;
+}
+
+.color-a {
+    
+    color: var(--color-a);
+}
+
+.transition {
+
+    transition: .5s;
+}
+
+/* Navbar */
+.linkNavbar {
+    color: var(--color-s);
+}
+
+
+.headerContainer {
+
+    
+    background-image:linear-gradient(to bottom, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0)), url(./media/sfondo\ header.jpg);
+    height: 80vh;
+    background-size: cover;
+    background-position: center;
+    
+}
+
+
+.navbar {
+   
+    margin: 5vh 10vw;
+    border: 3px solid var(--color-s);
+    background-color: rgba(255,0,0,0.5);
+    border-radius: 50px;
+
+}
+
+
+.navbarScroll {
+    margin: 5vh 25vw;
+    backdrop-filter: blur(5px);
+    border: 3px solid white;
+    background-color:rgba(255, 0, 0, 0.50);
+    border-radius: 50px;
+
+}
