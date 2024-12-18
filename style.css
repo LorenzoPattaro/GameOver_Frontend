@@ -36,31 +36,55 @@
     color: var(--color-a);
 }
 
+body {
+
+  margin: 0;
+  padding: 0;
+  background: url(./media/body.jpg);
+  background-size: cover; 
+  background-repeat: no-repeat; 
+  background-attachment: fixed;
+  background-position: center;
+
+  position: relative
+}
+
+body::before {
+    content: '';
+    position: absolute;
+    
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9); /* Velo nero con opacità al 50% */
+    z-index: -1; /* Assicurati che il velo stia sotto il contenuto del body */
+  }
+
+.text-color-a-shadow {
+
+        text-shadow: 2px 2px 5px var(--color-a); 
+}
+
 .transition {
 
     transition: .5s;
 }
 
-/* Navbar */
+
+/* NAVBAR */
+
 .linkNavbar {
+
     color: var(--color-s);
 }
 
+.navbar-toggler{
 
-.headerContainer {
-
-    
-    background-image:linear-gradient(to bottom, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0)), url(./media/sfondo\ header.jpg);
-    height: 80vh;
-    background-size: cover;
-    background-position: center;
-    
+    border: none;
 }
-
 
 .navbar {
    
-    margin: 5vh 10vw;
+    margin: 0vh 10vw;
     border: 3px solid var(--color-s);
     background-color: rgba(255,0,0,0.5);
     border-radius: 50px;
@@ -69,10 +93,34 @@
 
 
 .navbarScroll {
-    margin: 5vh 25vw;
+    margin: 0vh 25vw;
     backdrop-filter: blur(5px);
     border: 3px solid white;
     background-color:rgba(255, 0, 0, 0.50);
     border-radius: 50px;
 
+}
+
+
+/* HEADER */
+
+
+/* SEZIONE CATEGORIE */
+
+.box-categorie{
+
+    background: linear-gradient(to  right bottom, var(--color-s) 50%, var(--color-a) 60%);
+    border-top: 2px solid var(--color-s);
+    border-bottom: 2px solid var(--color-a);
+    border-right: 2px  var(--color-a);
+    border-left: 2px solid var(--color-s);
+    aspect-ratio: 1;    /* Serve per impostare l altezza uguale alla larghezza. E' dinamico */
+    border-radius: 50%;
+    margin: 7vh 2vw;
+}
+
+/* SEZIONE I NOSTRI NUMERI */
+
+.box-numeri {
+    color: var(--color-s);
 }

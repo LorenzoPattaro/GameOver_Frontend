@@ -4,14 +4,18 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Bootstrap demo</title>
+    <title>Progetto Presto</title>
+    <!-- BOOTSTRAP -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <!-- MY CSS -->
     <link rel="stylesheet" href="style.css">
+    <!-- AOS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   </head>
   <body class="bg-color-p" style="height: 20000px;">
 
     <!-- Navbar -->
-        <nav id="navbar" class="navbar navbar-expand-lg mt-2 mb-5 fixed-top transition ">
+        <nav id="navbar" class="navbar navbar-expand-lg mb-5 fixed-top transition mt-4">
 
             <div class="container hover-box">
 
@@ -51,13 +55,14 @@
     <!-- Header -->
      <header>
 
-        <div class="container-fluid p-0 my-5">
+        <div class="container-fluid p-0 ">
 
-            <div class="row align-items-center text-center p-0 ">
+            <div class="row align-items-center text-center p-0  m-0">
 
                 <div class="col-12 text-center my-5">
 
-                    <h1 class="color-s my-5">Video Game</h1>
+                    <br><br>
+                    <h1 class="color-s my-5 text-color-a-shadow display-1">Video Game</h1>
 
                 </div>
                 
@@ -71,10 +76,126 @@
             </div>
         </div>
      </header>
+<!-- Fine header -->
 
 
-     <script src="main.js"></script>
+<!--   Sezione Categorie  -->
+   <section>
+        <div class="container">
+
+            <div class="row justify-content-between my-5 text-center">
+
+                <div class="col-12 my-5">
+
+                    <h1 class="color-s text-color-a-shadow display-2">Categorie</h1>
+
+                </div>
+
+                <div class="col-3 box-categorie" data-aos="fade-up-right">
+
+                </div>
+
+                <div class="col-3 box-categorie" data-aos="fade-up">
+
+                </div>
+
+                <div class="col-3 box-categorie" data-aos="fade-up-left">
+
+                </div>
+
+                <div class="col-3 box-categorie" data-aos="fade-up-right">
+
+                </div>
+
+                <div class="col-3 box-categorie" data-aos="fade-up">
+
+                </div>
+
+                <div class="col-3 box-categorie" data-aos="fade-up-left">
+
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+<!-- Fine sezione Categorie -->
+
+
+<!-- Sezione i nostri numeri -->
+    <section>
+
+        <div class="container my-5">
+
+            <div class="row justify-content-between text-center">
+
+                <div class="col-12 my-5 pb-5 border-bottom">
+
+                    <h1 class="color-s text-color-a-shadow display-2">I Nostri Numeri</h1>
+
+                </div>
+
+                <div class="col-12 col-md-3 mt-5">
+
+                    <div class="box-numeri">
+
+                        <h4>Numero Giochi</h4>
+
+                        <p id="numGiochi">
+                            
+                        </p>
+                    </div>
+
+                </div>
+
+                <div class="col-12 col-md-3 mt-5">
+
+                    <div class="box-numeri">
+
+                        <h4>Clienti Soddisfatti</h4>
+
+                        <p id="numClienti">
+                        
+                        </p>
+                    </div>
+                    
+                </div>
+
+                <div class="col-12 col-md-3 mt-5">
+
+                    <div class="box-numeri">
+
+                        <h4>Nuovi Giochi</h4>
+
+                        <p id="numGiochiNuovi">
+                            
+                        </p>
+                    </div>
+                    
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+<!-- Fine sezione i nostri numeri -->
+
+
+<!-- BOOTSTRAP -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-    
+    <!-- AOS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <script>
+        AOS.init();
+    </script>
+
+    <!-- MY JS -->
+    <script src="main.js"></script>
+
   </body>
 </html>
