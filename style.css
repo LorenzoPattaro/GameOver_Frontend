@@ -1,7 +1,7 @@
 
 :root {
 
-    --color-p : #252D2A;
+    --color-p : black;
     --color-s : #EFF8E2;
     --color-a : red;
 }
@@ -36,6 +36,26 @@
     color: var(--color-a);
 }
 
+*{
+    font-family: "Poppins", serif;
+    
+}
+
+.title {
+
+  font-family: "Playfair Display", serif;
+}
+
+.subtitle {
+
+  font-family: "Montserrat", serif;
+}
+
+.text {
+
+    font-family: "Poppins", serif;
+}
+
 body {
 
   margin: 0;
@@ -59,15 +79,40 @@ body::before {
     z-index: -1; /* Assicurati che il velo stia sotto il contenuto del body */
   }
 
+.text-color-p-shadow {
+
+    text-shadow: 2px 2px 3px var(--color-p); 
+}
+
+.text-color-s-shadow {
+
+    text-shadow: 2px 2px 3px var(--color-s); 
+}
+
 .text-color-a-shadow {
 
-        text-shadow: 2px 2px 5px var(--color-a); 
+    text-shadow: 2px 2px 3px var(--color-a); 
 }
 
 .transition {
 
     transition: .5s;
 }
+
+h1 {
+
+    font-family: "Playfair Display", serif;
+  }
+  
+h2 {
+  
+    font-family: "Montserrat", serif;
+  }
+
+  .margine{
+
+
+  }
 
 
 /* NAVBAR */
@@ -96,7 +141,7 @@ body::before {
     margin: 0vh 25vw;
     backdrop-filter: blur(5px);
     border: 3px solid white;
-    background-color:rgba(255, 0, 0, 0.50);
+    background-color:rgba(255, 0, 0, 0.5);
     border-radius: 50px;
 
 }
@@ -119,8 +164,19 @@ body::before {
     margin: 7vh 2vw;
 }
 
+
+
 /* SEZIONE I NOSTRI NUMERI */
 
 .box-numeri {
     color: var(--color-s);
+}
+
+
+
+/* SEZIONE CARDS */
+
+.card{
+
+    background-color: rgba(255,0,0,0.5);
 }
