@@ -12,15 +12,12 @@ let cards  = [
 let cardsWrapper = document.querySelector("#cardsWrapper");
 
 
-
 // visualizzazione cards a schermo
-
-
 
 cards.forEach ( card => {
 
         let div = document.createElement("div");
-        div.classList.add("col-3", "card", "border", "border-white", "border-5", "bg-color-a", "p-0", "text-center");
+        div.classList.add("col-3", "card","bg-color-a", "p-0", "text-center");
         // div.style.width = "18rem";
 
         div.innerHTML = `
@@ -33,25 +30,52 @@ cards.forEach ( card => {
                     <p class="card-text color-s">
                         ${card.descrizione}
                     </p>
-                    <a href="#" class="btn btn-outline-light">Più Informazioni</a>
+                    <a href="#" class="btn btn-outline-p">Più Informazioni</a>
                     </div>
         `
         
         cardsWrapper.append(div)
     } )
+// fine visualizzazione cards a schermo
 
+
+    let categories = [
+
+        {"nome": "Azione"},
+        {"nome": "Avventura"},
+        {"nome": "RPG"},
+        {"nome": "Strategia"},
+        {"nome": "Sport"},
+        {"nome": "Horror"}
+]
+
+let categoryWrapper = document.querySelector("#categoryWrapper");
+
+
+//Visualizzazione Categorie a schermo
     
+    categories.forEach( category => {
 
+        let div = document.createElement("div");
 
+        console.log(category.nome)
+        div.classList.add("col-3", "box-categorie", "d-flex", "justify-content-center", "align-items-center")
+        div.setAttribute("data-aos","zoom-in")
 
+        div.innerHTML= 
+                        `
+                        <div class="position-relative">
+                        <img src="./media/categorie.png" alt="" style="width: 350px;">
+                    </div>
 
+                    <div class="position-absolute">
+                        <h3 class="color-s text-color-p-shadow"><a href="">${category.nome}</a></h3>
+                    </div>
+                        `
+        categoryWrapper.append(div)
+    })
 
-
-
-
-
-
-
+// fine Visualizzazione Categorie a schermo
 
 
 

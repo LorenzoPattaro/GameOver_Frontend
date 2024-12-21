@@ -1,9 +1,9 @@
 
 :root {
 
-    --color-p : black;
+    --color-p : cyan;
     --color-s : #EFF8E2;
-    --color-a : red;
+    --color-a : black;
 }
 
 .bg-color-p {
@@ -75,13 +75,13 @@ body::before {
     
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.9); /* Velo nero con opacità al 50% */
-    z-index: -1; /* Assicurati che il velo stia sotto il contenuto del body */
+    background-color: rgba(0, 0, 0, 0.9);
+    z-index: -1; 
   }
 
 .text-color-p-shadow {
 
-    text-shadow: 2px 2px 3px var(--color-p); 
+    text-shadow: 2px 2px 3px var(--color-p) !important; 
 }
 
 .text-color-s-shadow {
@@ -109,10 +109,33 @@ h2 {
     font-family: "Montserrat", serif;
   }
 
-  .margine{
+.btn-outline-p {
+    
+        padding: 10px 20px; /* Distanza interna */
+        font-size: 16px; /* Dimensione del testo */
+        font-weight: 600; /* Grassetto */
+        text-align: center; /* Allineamento del testo */
+        border: 2px solid var(--color-p); /* Usa la variabile per il bordo */
+        color: var(--color-p); /* Usa la variabile per il colore del testo */
+        background-color: transparent; /* Sfondo trasparente */
+        border-radius: 4px; /* Bordo arrotondato */
+        transition: all 0.3s ease; /* Transizione per effetto hover */
+        cursor: pointer; /* Aggiunge il cursore a mano */
+    }
+    
+   
+    .btn-outline-p:hover {
+        background-color: var(--color-p);
+        color: var(--color-a);
+        text-shadow: 2px 2px 3px var(--color-a);
+        border-color: var(--color-p); 
+    }
 
+    a{
+        text-decoration: none;
+        color: var(--color-s);
+    }
 
-  }
 
 
 /* NAVBAR */
@@ -130,8 +153,8 @@ h2 {
 .navbar {
    
     margin: 0vh 10vw;
-    border: 3px solid var(--color-s);
-    background-color: rgba(255,0,0,0.5);
+    border: 3px solid var(--color-p);
+    /* background-color: rgba(255,0,0,0.5); */
     border-radius: 50px;
 
 }
@@ -139,9 +162,9 @@ h2 {
 
 .navbarScroll {
     margin: 0vh 25vw;
-    backdrop-filter: blur(5px);
-    border: 3px solid white;
-    background-color:rgba(255, 0, 0, 0.5);
+    backdrop-filter: blur(8px);
+    border: 3px solid var(--color-p);
+    background-color:rgba(0, 0, 0, 0.6);
     border-radius: 50px;
 
 }
@@ -154,14 +177,13 @@ h2 {
 
 .box-categorie{
 
-    background: linear-gradient(to  right bottom, var(--color-s) 50%, var(--color-a) 60%);
-    border-top: 2px solid var(--color-s);
-    border-bottom: 2px solid var(--color-a);
-    border-right: 2px  var(--color-a);
-    border-left: 2px solid var(--color-s);
-    aspect-ratio: 1;    /* Serve per impostare l altezza uguale alla larghezza. E' dinamico */
+    
+  
+    background-image: url(/media/categorie.png);
+    aspect-ratio: 1;   /*Serve per impostare l altezza uguale alla larghezza. E' dinamico */
     border-radius: 50%;
-    margin: 7vh 2vw;
+    margin: 5vh 2vw;
+    
 }
 
 
@@ -178,5 +200,5 @@ h2 {
 
 .card{
 
-    background-color: rgba(255,0,0,0.5);
+    border: cyan 5px solid;
 }
