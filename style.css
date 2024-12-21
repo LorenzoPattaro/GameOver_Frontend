@@ -172,6 +172,53 @@ h2 {
 
 /* HEADER */
 
+.paragrafoHeader {
+
+    position: relative;
+
+}
+
+.paragrafoHeader::after {
+
+    content: "❝";
+    position: absolute;
+    top: -50px;
+    left: -30px;
+    font-size: 60px;
+    color: var(--color-p);
+    
+}
+
+.paragrafoHeader::before {
+
+    content: "❞";
+    position: absolute;
+    bottom: -45px;
+    right: -10px;
+    font-size: 60px;
+    color: var(--color-p);
+    
+}
+/* .virgolettaUp {
+    position: absolute;
+    top: -25px;
+    left: -25px;
+    font-size: 60px;
+    color: var(--color-p);
+    margin: 0;
+    padding: 0;
+}
+
+
+.virgolettaDown {
+    position: absolute;
+    bottom: 0;
+    right: -25px;
+    font-size: 60px;
+    color: var(--color-p);
+    margin: 0;
+    padding: 0;
+} */
 
 /* SEZIONE CATEGORIE */
 
