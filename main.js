@@ -17,7 +17,7 @@ let cardsWrapper = document.querySelector("#cardsWrapper");
 cards.forEach ( card => {
 
         let div = document.createElement("div");
-        div.classList.add("col-3", "card","bg-color-a", "p-0", "text-center");
+        div.classList.add("col-3", "card","bg-color-a", "p-0", "text-center", "my-5");
         // div.style.width = "18rem";
 
         div.innerHTML = `
