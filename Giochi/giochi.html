@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Progetto Presto</title>
+    <!-- BOOTSTRAP -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <!-- AOS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- GOOGLE FONTS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <!-- MY CSS -->
+    <link rel="stylesheet" href="../style.css">
+</head>
+  <body class="bg-color-p">
+
+    <!-- Navbar -->
+        <nav id="navbar" class="navbar navbar-expand-lg fixed-top transition mb-5 mt-4">
+
+            <div class="container d-flex justify-content-center">
+
+                <a id="logo" class="navbar-brand" href="#" >
+                    <img  src="../media/pngimg.com - pokeball_PNG7.png" alt="Bootstrap" width="40" height="40">
+                  </a>
+
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+
+              <div class="collapse navbar-collapse" id="navbarNav">
+                
+                <ul class="navbar-nav ms-auto">
+
+                  <li class="nav-item">
+                    <a class="nav-link linkNavbar" aria-current="page" href="../index.html">Home</a>
+                  </li>
+
+                  <li class="nav-item">
+                    <a class="nav-link linkNavbar" href="./giochi.html">About us</a>
+                  </li>
+
+                  <li class="nav-item">
+                    <a class="nav-link linkNavbar" href="#">Giochi</a>
+                  </li>
+
+                </ul>
+
+              </div>
+
+            </div>
+            
+          </nav>
+    <!-- Fine navbar -->
+
+    <div class="container-fluid py-5">
+
+        <div class="row py-5">
+
+            <div class="col-12 text-center my-5 py-5">
+                <h1 class="display-1 color-s text-color-p-shadow">TUTTI I GIOCHI</h1>
+            </div>
+
+        </div>
+
+        <div class="row border border-warning p-0 ">
+
+            <div class="col-5 border border-danger ">
+                <h2 class="display-3 color-s text-color-p-shadow text-center mb-2">Filtri</h2>
+
+                <div class="row">
+
+                    <div class="col-12" id="categoryWrapper">
+
+                        <h3>Scegli la categoria</h3>
+
+                        <div class="form-check">
+
+                            <input class="form-check-input" type="radio" name="radiosFilter" id="tutti" checked>
+
+                            <label class="form-check-label color-s" for="tutti">
+                                Tutti i Giochi
+                            </label>
+
+                        </div>
+
+                    </div>
+
+                    <div class="col-12">
+
+                        <h3>Scegli il prezzo</h3>
+
+                        <label id="labelPrice" for="inputRangePrice" class="form-label"></label>
+
+                        <input type="range" class="form-range" id="inputRangePrice" max="" min="" value="">
+
+                    </div>
+
+                    <div class="col-12">
+
+                        <h3>Cerca per nome</h3>
+
+                        <label for="searchName" class="form-label"></label>
+
+                        <input type="email" class="form-control" id="searchName" placeholder="Scrivi qui">
+
+                    </div>
+
+                </div>
+                    
+            </div>
+
+            <div class="col-7 border border-secondary ">
+                <h2 class="display-3 color-s text-color-p-shadow text-center mb-4">Giochi</h2>  
+                
+                <div class="row flex-wrap justify-content-evenly" id="cardsWrapper">
+
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+
+
+
+    <!-- BOOTSTRAP -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <!-- AOS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <script>
+        AOS.init();
+    </script>
+
+    <!-- MY JS -->
+    <script src="giochi.js"></script>
+
+  </body>
+</html>

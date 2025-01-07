@@ -1,50 +1,57 @@
 
-let cards  = [
+// let cards  = [
 
-            {"titolo": "God Of War", "descrizione": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsum eos sed maiores, placeat reprehenderit iste explicabo corporis omnis", "categoria": "Avventura", "dataPubblicazione": "12/10/2002", "copertina": "tlou.avif", "link": "https://www.playstation.com/it-it/god-of-war/"},
+//             {"titolo": "God Of War", "descrizione": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsum eos sed maiores, placeat reprehenderit iste explicabo corporis omnis", "categoria": "Avventura", "dataPubblicazione": "12/10/2002", "copertina": "tlou.avif", "link": "https://www.playstation.com/it-it/god-of-war/"},
 
-            {"titolo": "Skyrim", "descrizione": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsum eos sed maiores, placeat reprehenderit iste explicabo corporis omnis", "categoria": "RPG", "dataPubblicazione": "12/10/2002", "copertina": "tlou.avif", "link": "https://www.playstation.com/it-it/games/the-elder-scrolls-v-skyrim/"},
+//             {"titolo": "Skyrim", "descrizione": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsum eos sed maiores, placeat reprehenderit iste explicabo corporis omnis", "categoria": "RPG", "dataPubblicazione": "12/10/2002", "copertina": "tlou.avif", "link": "https://www.playstation.com/it-it/games/the-elder-scrolls-v-skyrim/"},
 
-            {"titolo": "EA Sports Fc25", "descrizione": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsum eos sed maiores, placeat reprehenderit iste explicabo corporis omnis", "categoria": "Sport", "dataPubblicazione": "12/10/2002", "copertina": "tlou.avif", "link": "https://www.playstation.com/it-it/games/ea-sports-fc/"},
+//             {"titolo": "EA Sports Fc25", "descrizione": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsum eos sed maiores, placeat reprehenderit iste explicabo corporis omnis", "categoria": "Sport", "dataPubblicazione": "12/10/2002", "copertina": "tlou.avif", "link": "https://www.playstation.com/it-it/games/ea-sports-fc/"},
 
-            {"titolo": "The Last Of US", "descrizione": "Dopo un evento traumatico, Ellie intraprende una missione di vendetta che esplora temi di dolore, perdita e moralità.", "categoria": "Sopravvivenza", "dataPubblicazione": "12/10/2002", "copertina": "tlou.avif", "link": "https://www.playstation.com/it-it/games/the-last-of-us-part-ii-remastered/"},
+//             {"titolo": "The Last Of US", "descrizione": "Dopo un evento traumatico, Ellie intraprende una missione di vendetta che esplora temi di dolore, perdita e moralità.", "categoria": "Sopravvivenza", "dataPubblicazione": "12/10/2002", "copertina": "tlou.avif", "link": "https://www.playstation.com/it-it/games/the-last-of-us-part-ii-remastered/"},
 
-            {"titolo": "Read Dead Redemption ll", "descrizione": "Ambientato nel 1899, segue la storia di Arthur Morgan, un fuorilegge in fuga dal cambiamento del selvaggio West.", "categoria": "Avventura", "dataPubblicazione": "12/10/2002", "copertina": "rdr2.avif", "link": "https://www.playstation.com/it-it/games/red-dead-redemption-2/"},
+//             {"titolo": "Read Dead Redemption ll", "descrizione": "Ambientato nel 1899, segue la storia di Arthur Morgan, un fuorilegge in fuga dal cambiamento del selvaggio West.", "categoria": "Avventura", "dataPubblicazione": "12/10/2002", "copertina": "rdr2.avif", "link": "https://www.playstation.com/it-it/games/red-dead-redemption-2/"},
 
-            {"titolo": "Rainbow Six Siege", "descrizione": "E' un gioco tattico in prima persona che mette i giocatori nei panni di operazioni speciali di élite in scenari di assalto e difesa.", "categoria": "Sparatuttp", "dataPubblicazione": "12/10/2002", "copertina": "r6.avif", "link": "https://store.playstation.com/it-it/product/EP0001-CUSA01788_00-RAINBOWSIXSIEGE"}
+//             {"titolo": "Rainbow Six Siege", "descrizione": "E' un gioco tattico in prima persona che mette i giocatori nei panni di operazioni speciali di élite in scenari di assalto e difesa.", "categoria": "Sparatuttp", "dataPubblicazione": "12/10/2002", "copertina": "r6.avif", "link": "https://store.playstation.com/it-it/product/EP0001-CUSA01788_00-RAINBOWSIXSIEGE"}
 
-];
-
-let newCardsWrapper = document.querySelector("#newCardsWrapper");
+// ];
 
 
-// visualizzazione ultime 3 cards a schermo
 
-let last3Cards = cards.slice(-3);
 
-last3Cards.forEach ( card => {
+//
+fetch("./JSON/giochi.json").then( (response) => response.json()).then( (giochi) => {
 
-        let div = document.createElement("div");
-        div.classList.add("col-12", "col-md-3", "d-flex","flex-wrap", "card","bg-color-a", "p-0", "text-center", "my-5", "me-0");
-        // div.style.width = "18rem";
+    
+    let newCardsWrapper = document.querySelector("#newCardsWrapper");
 
-        div.innerHTML = `
-                    <figure>
-                    <img src="./media/${card.copertina}" class="card-img-top" alt="...">
-                    </figure>
-                    
-                    <div class="card-body m-0">
-                    <h4 class="card-title title color-s text-color-p-shadow fw-bold pb-3 mb-3 border-bottom border-2 ">${card.titolo}</h5>
-                    <p class="card-text color-s">
-                        ${card.descrizione}
-                    </p>
-                    <a href=${card.link} target="_blank" class="btn btn-outline-p">Più Informazioni</a>
-                    </div>
-        `
-        
-        newCardsWrapper.append(div)
-    } )
-// fine visualizzazione ultime 3 cards a schermo
+    // visualizzazione ultime 3 cards a schermo
+    let last3Cards = giochi.slice(-3);
+    
+    last3Cards.forEach ( card => {
+    
+            let div = document.createElement("div");
+            div.classList.add("col-12", "col-md-3", "card","bg-color-a", "p-0", "text-center", "my-5", "me-0");
+            // div.style.width = "18rem";
+    
+            div.innerHTML = `
+                        <figure>
+                        <img src="./media/${card.copertina}" class="card-img-top" alt="...">
+                        </figure>
+                        
+                        <div class="card-body m-0">
+                        <h4 class="card-title title color-s text-color-p-shadow fw-bold pb-3 mb-3 border-bottom border-2 ">${card.titolo}</h5>
+                        <p class="card-text color-s">
+                            ${card.descrizione}
+                        </p>
+                        <a href=${card.link} target="_blank" class="btn btn-outline-p">Più Informazioni</a>
+                        </div>
+            `
+            
+            newCardsWrapper.appendChild(div)
+        } )
+    // fine visualizzazione ultime 3 cards a schermo
+})
+
 
 
     let categories = [
@@ -80,7 +87,7 @@ let categoryWrapper = document.querySelector("#categoryWrapper");
                         <h3 class="color-s text-color-p-shadow"><a href="${category.link}" target="_blank">${category.nome}</a></h3>
                     </div>
                         `
-        categoryWrapper.append(div)
+        categoryWrapper.appendChild(div)
     })
 
 // fine Visualizzazione Categorie a schermo
@@ -166,4 +173,12 @@ let osservatore = new IntersectionObserver( entries => {
 })
 
 osservatore.observe(numGiochi)
+
+
+
+
+
+
+
+
 

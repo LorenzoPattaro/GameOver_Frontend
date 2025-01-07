@@ -66,6 +66,7 @@ body {
   background-attachment: fixed;
   background-position: center;
   overflow-x: hidden; /* Nasconde il contenuto che eccede a destra */
+  min-height: 100vh;
 
   position: relative
 }
