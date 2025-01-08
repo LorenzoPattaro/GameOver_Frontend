@@ -222,10 +222,20 @@ h2 {
 
 
 /* SEZIONE I NOSTRI NUMERI */
+.box-numeri{
+
+    border: 3px solid var(--color-p);
+    
+    text-align: center;
+    padding: 20px 50px;
+    border-radius: 20px;
+    
+}
+
 
 .swiper {
-    width: 400px;
-    height: 400px;
+    width: 450px;
+    height: 450px;
     background-color: rgba(0, 0, 0, 0.9);
   }
 
@@ -239,6 +249,23 @@ h2 {
     display: block;
     width: 100%;
   }
+
+  .carouselNext {
+    transform: rotate(-90deg);
+    position: absolute;
+    left: 25px;
+  }
+
+  .carouselPrev {
+    transform: rotate(90deg);
+    position: absolute;
+    right: 25px;
+  }
+
+  .swiper-button-next, .swiper-button-prev {
+   
+    color: transparent; 
+}
 
 
 /* SEZIONE CARDS */

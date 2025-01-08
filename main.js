@@ -101,15 +101,21 @@ fetch("./JSON/giochi.json").then( (response) => response.json()).then( (giochi) 
 
 
     // VISUALIZZAZIONE CAROSELLO
-    let swiperWrapper = document.querySelector(".swiper-wrapper");
-
+    let mySwiper = document.querySelector(".mySwiper");
+    
     function setCarosello() {
+
+        let wrapper = document.createElement("div");
+
+        wrapper.classList.add("swiper-wrapper");
+
+        mySwiper.appendChild(wrapper)
 
         giochi.forEach( (gioco) => {
 
             let div = document.createElement("div");
 
-            div.classList.add("swiper-slide");
+             div.classList.add("swiper-slide", "ao");
 
             div.innerHTML= 
                             `
@@ -117,14 +123,35 @@ fetch("./JSON/giochi.json").then( (response) => response.json()).then( (giochi) 
                                 <img src="./media/${gioco.copertina}" />
                             `
             
-            swiperWrapper.appendChild(div);
+                            wrapper.appendChild(div);
         })
-    
+
+        
     }
 
     setCarosello();
 // FINE VISUALIZZAZIONE CAROSELLO
 
+
+//  Initialize Swiper 
+  
+const swiper = new Swiper(".mySwiper", {
+    effect: "cube",
+    grabCursor: true,
+    cubeEffect: {
+      shadow: true,
+      slideShadows: true,
+      shadowOffset: 20,
+      shadowScale: 0.94,
+    },
+    pagination: {
+      el: ".swiper-pagination",
+    },
+    navigation: {
+        nextEl: ".carouselNext",
+        prevEl: ".swiper-button-prev",
+    },
+  });
 })
 
 
@@ -207,21 +234,7 @@ let osservatore = new IntersectionObserver( entries => {
 osservatore.observe(numGiochi)
 
 
-//  Initialize Swiper 
-  
-    const swiper = new Swiper(".mySwiper", {
-      effect: "cube",
-      grabCursor: true,
-      cubeEffect: {
-        shadow: true,
-        slideShadows: true,
-        shadowOffset: 20,
-        shadowScale: 0.94,
-      },
-      pagination: {
-        el: ".swiper-pagination",
-      },
-    });
+
  
 
 
