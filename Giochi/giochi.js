@@ -14,7 +14,7 @@ function visualizzazioneCards (array) {
     array.forEach ( card => {
 
         let div = document.createElement("div");
-        div.classList.add("col-12", "col-md-3", "card","bg-color-a", "m-md-5", "my-4", "p-0", "text-center");
+        div.classList.add("col-12", "col-md-3", "card","bg-color-a", "mx-5", "mb-5", "p-0", "text-center");
         //  div.style.width = "18rem";
 
         div.innerHTML = `
@@ -30,7 +30,6 @@ function visualizzazioneCards (array) {
                     <a href=${card.link} target="_blank" class="btn btn-outline-p">Più Informazioni</a>
                     </div>
         `
-        
         cardsWrapper.appendChild(div)
     } )
 }
@@ -63,7 +62,7 @@ categorie.forEach( (categoria) => {
 
     let div = document.createElement("div");
     
-    div.classList.add("form-check");
+    div.classList.add("form-check", "ps-5");
 
     div.innerHTML=
                     `
@@ -86,22 +85,23 @@ setCategory()
 // FILTRI CATEGORIE
  let formCheckInputs = document.querySelectorAll(".form-check-input");
 
- function filterByCategory (){
+ function filterByCategory (array){
 
     let radioBtns = Array.from(formCheckInputs) //  trasforma un insieme di elementi in un array
 
     let btnChecked = radioBtns.find( (radioBtn) => radioBtn.checked == true);
 
-    let filtered = giochi.filter ( (gioco) => gioco.categoria == btnChecked.id)
+    let filtered = array.filter ( (gioco) => gioco.categoria == btnChecked.id)
     
     if(btnChecked.id == "tutti"){
 
-        visualizzazioneCards(giochi);
+        return array;
+        // visualizzazioneCards(array)
 
     } else {   
 
-        visualizzazioneCards(filtered);
-
+        return filtered;
+        // visualizzazioneCards(filtered)
     }
  }
 
@@ -109,7 +109,8 @@ formCheckInputs.forEach( (radio) =>{
 
     radio.addEventListener( "input", ()=>{
 
-       filterByCategory();
+        // filterByCategory(giochi);
+        globalFilter();
 
          
     })
@@ -140,41 +141,63 @@ setMinMaxPrice()
 // FINE CREAZIONE PREZZI DINAMICI
 
 
-// FILTRO PREZZI
-function filterByPrice() {
 
-    let prezzoFiltered = giochi.filter( (gioco) => gioco.prezzo <= inputRangePrice.value);
+
+// FILTRO PREZZI
+function filterByPrice(array) {
+
+    let prezzoFiltered = array.filter( (gioco) => gioco.prezzo <= inputRangePrice.value);
     
-    visualizzazioneCards(prezzoFiltered)
+    // visualizzazioneCards(prezzoFiltered)
+    return prezzoFiltered
 }
 
 inputRangePrice.addEventListener( "input", ()=> {
 
     labelPrice.innerHTML = `${inputRangePrice.value} €`;
-    filterByPrice();
+
+    // filterByPrice(giochi);
+    globalFilter();
 
 })
 // FINE FILTRO PREZZI
 
 
-let searchName = document.querySelector("#searchName");
+
 
 // FILTRO NOMI
-function setSearchName() {
+let searchName = document.querySelector("#searchName");
 
-    let giochiFiltered = giochi.filter( (gioco) => gioco.titolo.toLowerCase().includes(searchName.value.toLowerCase()));
+function setSearchName(array) {
 
-    console.log(giochiFiltered)
-    visualizzazioneCards(giochiFiltered);
+    let giochiFiltered = array.filter( (gioco) => gioco.titolo.toLowerCase().includes(searchName.value.toLowerCase()));
+
+  
+    // visualizzazioneCards(giochiFiltered);
+    return giochiFiltered;
 }
-setSearchName()
+
 
 searchName.addEventListener("input", ()=> {
 
-    setSearchName();
+    // setSearchName(giochi);
+    globalFilter();
 })
 // FINE FILTRO NOMI
 
+
+
+
+// GLOBAL FILTER
+
+function globalFilter(){
+
+    let risultatoFiltroCategoria = filterByCategory(giochi);
+    let risultatoFiltroPrezzi = filterByPrice(risultatoFiltroCategoria);
+    let risultatoFiltroNome = setSearchName(risultatoFiltroPrezzi);
+
+    visualizzazioneCards(risultatoFiltroNome);
+}
 
 
 

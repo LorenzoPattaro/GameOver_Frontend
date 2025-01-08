@@ -237,6 +237,26 @@ h2 {
 }
 
 
+
+/* PAGINA GIOCHI */
+
+
+
+/* SEZIONE FILTRI */
+
+.box-filter {
+    background-color: var(--color-a);
+    border-radius: 5%;
+    border: 20px groove cyan;
+    position: sticky;
+    top: 50px;
+}
+
+.border-bottom-custom{
+    border-bottom: var(--color-p) 20px groove;
+}
+
+
 /* MEDIA QUERY PER SMARTPHONE */
 @media (max-width: 767px) {
 
