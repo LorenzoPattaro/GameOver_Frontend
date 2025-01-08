@@ -8,12 +8,15 @@
 
     {"titolo": "EA Sports Fc25", "descrizione": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsum eos sed maiores, placeat reprehenderit iste explicabo corporis omnis", "categoria": "Sport", "dataPubblicazione": "12/10/2002", "copertina": "fc 25.jpg", "link": "https://www.playstation.com/it-it/games/ea-sports-fc/", "prezzo": 130},
 
-    {"titolo": "The Last Of US", "descrizione": "Dopo un evento traumatico, Ellie intraprende una missione di vendetta che esplora temi di dolore, perdita e moralità.", "categoria": "Sopravvivenza", "dataPubblicazione": "12/10/2002", "copertina": "tlou.avif", "link": "https://www.playstation.com/it-it/games/the-last-of-us-part-ii-remastered/", "prezzo": 100},
+    {"titolo": "Minecraft", "descrizione": "E' un gioco tattico in prima persona che mette i giocatori nei panni di operazioni speciali di élite in scenari di assalto e difesa.", "categoria": "Open world", "dataPubblicazione": "12/10/2002", "copertina": "bo6.jpg", "link": "https://store.playstation.com/it-it/product/EP0001-CUSA01788_00-RAINBOWSIXSIEGE", "prezzo": 15},
+
+    {"titolo": "The Last Of US", "descrizione": "Dopo un evento traumatico, Ellie intraprende una missione di vendetta che esplora temi di dolore, perdita e moralità.", "categoria": "Surviving", "dataPubblicazione": "12/10/2002", "copertina": "tlou.avif", "link": "https://www.playstation.com/it-it/games/the-last-of-us-part-ii-remastered/", "prezzo": 100},
 
     {"titolo": "Read Dead Redemption ll", "descrizione": "Ambientato nel 1899, segue la storia di Arthur Morgan, un fuorilegge in fuga dal cambiamento del selvaggio West.", "categoria": "Avventura", "dataPubblicazione": "12/10/2002", "copertina": "rdr2.avif", "link": "https://www.playstation.com/it-it/games/red-dead-redemption-2/", "prezzo": 50},
 
     {"titolo": "Rainbow Six Siege", "descrizione": "E' un gioco tattico in prima persona che mette i giocatori nei panni di operazioni speciali di élite in scenari di assalto e difesa.", "categoria": "Sparatutto", "dataPubblicazione": "12/10/2002", "copertina": "r6.avif", "link": "https://store.playstation.com/it-it/product/EP0001-CUSA01788_00-RAINBOWSIXSIEGE", "prezzo": 40},
 
     {"titolo": "Black Ops 6", "descrizione": "E' un gioco tattico in prima persona che mette i giocatori nei panni di operazioni speciali di élite in scenari di assalto e difesa.", "categoria": "Sparatutto", "dataPubblicazione": "12/10/2002", "copertina": "bo6.jpg", "link": "https://store.playstation.com/it-it/product/EP0001-CUSA01788_00-RAINBOWSIXSIEGE", "prezzo": 120}
+
 
 ]

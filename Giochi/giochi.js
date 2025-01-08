@@ -15,7 +15,6 @@ function visualizzazioneCards (array) {
 
         let div = document.createElement("div");
         div.classList.add("col-12", "col-md-3", "card","bg-color-a", "mx-5", "mb-5", "p-0", "text-center");
-        //  div.style.width = "18rem";
 
         div.innerHTML = `
                     <figure>
@@ -39,15 +38,15 @@ visualizzazioneCards(giochi)
 
 
 
-
-
 // CREAZIONE CATEGORIE DINAMICHE
 let categoryWrapper = document.querySelector("#categoryWrapper");
 
 function setCategory () {
 
     let categorieMapped = giochi.map( (gioco) => gioco.categoria)
+
     let categorie = [];
+
     categorieMapped.forEach( (categoria) => {
 
         if(!categorie.includes(categoria)){
@@ -56,26 +55,25 @@ function setCategory () {
         }
     })
 
-    console.log(categorie)
+    categorie.forEach( (categoria) => {
 
-categorie.forEach( (categoria) => {
+        let div = document.createElement("div");
+        
+        div.classList.add("form-check", "ps-5");
 
-    let div = document.createElement("div");
-    
-    div.classList.add("form-check", "ps-5");
-
-    div.innerHTML=
-                    `
-                    <input class="form-check-input" type="radio" name="radiosFilter" id="${categoria}" >
-                    <label class="form-check-label color-s fs-5 color-s text-color-p-shadow text-center mb-2" for="${categoria}">
-                        ${categoria}
-                    </label>
-                    `;
-    
-    categoryWrapper.appendChild(div)
-    
-})
+        div.innerHTML=
+                        `
+                        <input class="form-check-input" type="radio" name="radiosFilter" id="${categoria}" >
+                        <label class="form-check-label color-s fs-5 color-s text-color-p-shadow text-center mb-2" for="${categoria}">
+                            ${categoria}
+                        </label>
+                        `;
+        
+        categoryWrapper.appendChild(div)
+        
+    })
 }
+
 setCategory()
 // FINE CREAZIONE CATEGORIE DINAMICHE
 

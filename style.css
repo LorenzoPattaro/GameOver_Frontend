@@ -223,10 +223,22 @@ h2 {
 
 /* SEZIONE I NOSTRI NUMERI */
 
-.box-numeri {
-    color: var(--color-s);
-}
+.swiper {
+    width: 400px;
+    height: 400px;
+    background-color: rgba(0, 0, 0, 0.9);
+  }
 
+  
+  .swiper-slide {
+    background-position: center;
+    background-size: cover;
+  }
+
+  .swiper-slide img {
+    display: block;
+    width: 100%;
+  }
 
 
 /* SEZIONE CARDS */

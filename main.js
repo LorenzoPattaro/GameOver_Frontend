@@ -19,81 +19,113 @@
 
 
 //
+
 fetch("./JSON/giochi.json").then( (response) => response.json()).then( (giochi) => {
 
     
     let newCardsWrapper = document.querySelector("#newCardsWrapper");
 
     // visualizzazione ultime 3 cards a schermo
-    let last3Cards = giochi.slice(-3);
-    
-    last3Cards.forEach ( card => {
-    
-            let div = document.createElement("div");
-            div.classList.add("col-12", "col-md-3", "card","bg-color-a", "p-0", "text-center", "my-5", "me-0");
-            // div.style.width = "18rem";
-    
-            div.innerHTML = `
-                        <figure>
-                        <img src="./media/${card.copertina}" class="card-img-top" alt="...">
-                        </figure>
-                        
-                        <div class="card-body m-0">
-                        <h4 class="card-title title color-s text-color-p-shadow fw-bold pb-3 mb-3 border-bottom border-2 ">${card.titolo}</h5>
-                        <p class="card-text color-s">
-                            ${card.descrizione}
-                        </p>
-                        <a href=${card.link} target="_blank" class="btn btn-outline-p">Più Informazioni</a>
-                        </div>
-            `
-            
-            newCardsWrapper.appendChild(div)
+    function newCard(){
+
+        let last3Cards = giochi.slice(-3);
+        
+        last3Cards.forEach ( card => {
+        
+                let div = document.createElement("div");
+                div.classList.add("col-12", "col-md-3", "card","bg-color-a", "p-0", "text-center", "my-5", "me-0");
+        
+                div.innerHTML = `
+                            <figure>
+                            <img src="./media/${card.copertina}" class="card-img-top" alt="...">
+                            </figure>
+                            
+                            <div class="card-body m-0">
+                            <h4 class="card-title title color-s text-color-p-shadow fw-bold pb-3 mb-3 border-bottom border-2 ">${card.titolo}</h5>
+                            <p class="card-text color-s">
+                                ${card.descrizione}
+                            </p>
+                            <a href=${card.link} target="_blank" class="btn btn-outline-p">Più Informazioni</a>
+                            </div>
+                `
+                
+                newCardsWrapper.appendChild(div)
         } )
+
+    }
+
+    newCard();
     // fine visualizzazione ultime 3 cards a schermo
-})
+
+
+    // CREAZIONE CATEGORIE DINAMICHE
+    let categoryWrapper = document.querySelector("#categoryWrapper");
+
+    function setCategory(){
+
+        let categoriaMapped = giochi.map( (gioco) => gioco.categoria);
+        let arrayAppoggio = [];
+
+        categoriaMapped.forEach( categoria => {
+
+            if(!arrayAppoggio.includes(categoria)){
+
+                arrayAppoggio.push(categoria);
+            
+                let div = document.createElement("div");
+                
+                div.classList.add("col-12", "col-md-4", "p-0", "m-0", "box-categorie", "d-flex", "justify-content-center", "align-items-center")
+                div.setAttribute("data-aos","zoom-in")
+        
+                div.innerHTML= 
+                                `
+                                <div class="position-relative">
+                                <img src="./media/categorie.png" alt="" style="width: 350px;">
+                            </div>
+        
+                            <div class="position-absolute">
+                                <h3 class="color-s text-color-p-shadow"><a href="" target="_blank">${categoria}</a></h3>
+                            </div>
+                                `
+                categoryWrapper.appendChild(div)
+
+            }
+        })
+
+    }
+
+    setCategory();
+    // FINE CREAZIONE CATEGORIE DINAMICHE
 
 
 
-    let categories = [
 
-        {"nome": "Sparatutto", "link": "https://www.playstation.com/it-it/editorial/best-team-shooters-on-ps4-ps5/"},
-        {"nome": "Survival", "link": "https://www.playstation.com/it-it/editorial/best-survival-games-ps4-ps5/"},
-        {"nome": "RPG", "link": "https://multiplayer.it/giochi/playstation-4/gioco-di-ruolo/?o=i-migliori"},
-        {"nome": "Avventura", "link": "https://www.playstation.com/it-it/editorial/great-narrative-games-on-ps4/"},
-        {"nome": "Sport", "link": "https://www.playstation.com/it-it/editorial/best-ps4-sports-games/"},
-        {"nome": "Horror", "link": "https://www.playstation.com/it-it/editorial/great-horror-games-on-ps4/"}
-]
+    // VISUALIZZAZIONE CAROSELLO
+    let swiperWrapper = document.querySelector(".swiper-wrapper");
 
-let categoryWrapper = document.querySelector("#categoryWrapper");
+    function setCarosello() {
 
+        giochi.forEach( (gioco) => {
 
-//Visualizzazione Categorie a schermo
+            let div = document.createElement("div");
+
+            div.classList.add("swiper-slide");
+
+            div.innerHTML= 
+                            `
+                            
+                                <img src="./media/${gioco.copertina}" />
+                            `
+            
+            swiperWrapper.appendChild(div);
+        })
     
-    categories.forEach( category => {
+    }
 
-        let div = document.createElement("div");
+    setCarosello();
+// FINE VISUALIZZAZIONE CAROSELLO
 
-        console.log(category.nome)
-        div.classList.add("col-12", "col-md-4", "p-0", "m-0", "box-categorie", "d-flex", "justify-content-center", "align-items-center")
-        div.setAttribute("data-aos","zoom-in")
-
-        div.innerHTML= 
-                        `
-                        <div class="position-relative">
-                        <img src="./media/categorie.png" alt="" style="width: 350px;">
-                    </div>
-
-                    <div class="position-absolute">
-                        <h3 class="color-s text-color-p-shadow"><a href="${category.link}" target="_blank">${category.nome}</a></h3>
-                    </div>
-                        `
-        categoryWrapper.appendChild(div)
-    })
-
-// fine Visualizzazione Categorie a schermo
-
-
-
+})
 
 
 let navbar = document.querySelector("#navbar");
@@ -175,7 +207,22 @@ let osservatore = new IntersectionObserver( entries => {
 osservatore.observe(numGiochi)
 
 
-
+//  Initialize Swiper 
+  
+    const swiper = new Swiper(".mySwiper", {
+      effect: "cube",
+      grabCursor: true,
+      cubeEffect: {
+        shadow: true,
+        slideShadows: true,
+        shadowOffset: 20,
+        shadowScale: 0.94,
+      },
+      pagination: {
+        el: ".swiper-pagination",
+      },
+    });
+ 
 
 
 
