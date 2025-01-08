@@ -3,11 +3,10 @@
 
 
 fetch("../JSON/giochi.json").then( (response) => response.json()).then( (giochi) => {
-
     
+// VISUALIZZAZIONE GIOCHI
 let cardsWrapper = document.querySelector("#cardsWrapper");
 
-// VISUALIZZAZIONE GIOCHI
 function visualizzazioneCards (array) {
 
     cardsWrapper.innerHTML=``;
@@ -15,7 +14,7 @@ function visualizzazioneCards (array) {
     array.forEach ( card => {
 
         let div = document.createElement("div");
-        div.classList.add("col-12", "col-md-4", "card","bg-color-a", "m-md-5", "my-4", "p-0", "text-center");
+        div.classList.add("col-12", "col-md-3", "card","bg-color-a", "m-md-5", "my-4", "p-0", "text-center");
         //  div.style.width = "18rem";
 
         div.innerHTML = `
@@ -42,9 +41,10 @@ visualizzazioneCards(giochi)
 
 
 
-let categoryWrapper = document.querySelector("#categoryWrapper");
 
 // CREAZIONE CATEGORIE DINAMICHE
+let categoryWrapper = document.querySelector("#categoryWrapper");
+
 function setCategory () {
 
     let categorieMapped = giochi.map( (gioco) => gioco.categoria)
@@ -68,7 +68,7 @@ categorie.forEach( (categoria) => {
     div.innerHTML=
                     `
                     <input class="form-check-input" type="radio" name="radiosFilter" id="${categoria}" >
-                    <label class="form-check-label color-s" for="${categoria}">
+                    <label class="form-check-label color-s fs-5 color-s text-color-p-shadow text-center mb-2" for="${categoria}">
                         ${categoria}
                     </label>
                     `;
@@ -82,52 +82,47 @@ setCategory()
 
 
 
-let formCheckInputs = document.querySelectorAll(".form-check-input");
 
 // FILTRI CATEGORIE
+ let formCheckInputs = document.querySelectorAll(".form-check-input");
 
-                                                                                // VERSIONE CORSO
+ function filterByCategory (){
 
-// function filterByCategory (){
+    let radioBtns = Array.from(formCheckInputs) //  trasforma un insieme di elementi in un array
 
-//     let radioBtns = Array.from(formCheckInputs) //  trasforma un insieme di elementi in un array
+    let btnChecked = radioBtns.find( (radioBtn) => radioBtn.checked == true);
 
-//     let btnChecked = radioBtns.find( (radioBtn) => radioBtn.checked == true);
-
-//     let filtered = giochi.filter ( (gioco) => gioco.categoria == btnChecked.id)
+    let filtered = giochi.filter ( (gioco) => gioco.categoria == btnChecked.id)
     
-//     visualizzazioneCards(filtered);
-// }
+    if(btnChecked.id == "tutti"){
 
+        visualizzazioneCards(giochi);
 
+    } else {   
+
+        visualizzazioneCards(filtered);
+
+    }
+ }
 
 formCheckInputs.forEach( (radio) =>{
 
     radio.addEventListener( "input", ()=>{
 
-        // filterByCategory();                                                    // VERSIONE CORSO
+       filterByCategory();
 
-        if(radio.id == "tutti"){
-
-            visualizzazioneCards(giochi);
-
-        } else {
-
-            let giochiFiltered = giochi.filter( (gioco) => radio.id == gioco.categoria);
-
-            visualizzazioneCards(giochiFiltered);
-
-        }
+         
     })
 })
 // FINE FILTRI CATEGORIE
 
 
-let inputRangePrice = document.querySelector("#inputRangePrice");
-let labelPrice = document.querySelector("#labelPrice");
 
 
 // CREAZIONE PREZZI DINAMICI
+let inputRangePrice = document.querySelector("#inputRangePrice");
+let labelPrice = document.querySelector("#labelPrice");
+
 function setMinMaxPrice(){
 
     let prezzoMapped = giochi.map( (gioco) => gioco.prezzo);
@@ -139,13 +134,13 @@ function setMinMaxPrice(){
     inputRangePrice.min = min;
     inputRangePrice.value = max;
 
-    labelPrice.innerHTML = inputRangePrice.max;
+    labelPrice.innerHTML = inputRangePrice.max + "€";
 }
 setMinMaxPrice()
 // FINE CREAZIONE PREZZI DINAMICI
 
 
-// FILTRI PREZZI
+// FILTRO PREZZI
 function filterByPrice() {
 
     let prezzoFiltered = giochi.filter( (gioco) => gioco.prezzo <= inputRangePrice.value);
@@ -155,11 +150,32 @@ function filterByPrice() {
 
 inputRangePrice.addEventListener( "input", ()=> {
 
-    labelPrice.innerHTML = inputRangePrice.value;
+    labelPrice.innerHTML = `${inputRangePrice.value} €`;
     filterByPrice();
 
 })
-// FINE FILTRI PREZZI
+// FINE FILTRO PREZZI
+
+
+let searchName = document.querySelector("#searchName");
+
+// FILTRO NOMI
+function setSearchName() {
+
+    let giochiFiltered = giochi.filter( (gioco) => gioco.titolo.toLowerCase().includes(searchName.value.toLowerCase()));
+
+    console.log(giochiFiltered)
+    visualizzazioneCards(giochiFiltered);
+}
+setSearchName()
+
+searchName.addEventListener("input", ()=> {
+
+    setSearchName();
+})
+// FINE FILTRO NOMI
+
+
 
 
 })
@@ -189,3 +205,7 @@ window.addEventListener( "scroll", () => {
     }
 
 })
+
+
+
+
