@@ -2,21 +2,21 @@
 
     {"titolo": "God Of War", "descrizione": "Segui la leggendaria avventura di Kratos e suo figlio Atreus nel regno della mitologia norrena. Un capolavoro d'azione e narrazione.", "categoria": "Avventura", "dataPubblicazione": "12/10/2002", "copertina": "god of war.jpg", "link": "https://www.playstation.com/it-it/god-of-war/", "prezzo": 30},
 
-    {"titolo": "God Of War Ragnarok", "descrizione": "Kratos e Atreus affrontano nuove sfide nei gelidi regni norreni, con battaglie epiche contro divinità e mostri mitologici.", "categoria": "Avventura", "dataPubblicazione": "12/10/2002", "copertina": "god of war ragnarok.avif", "link": "https://www.playstation.com/it-it/god-of-war/", "prezzo": 60},
+    {"titolo": "God Of War Ragnarok", "descrizione": "Kratos e Atreus affrontano nuove sfide nei gelidi regni norreni, con battaglie epiche contro divinità e mostri mitologici.", "categoria": "Avventura", "dataPubblicazione": "12/10/2002", "copertina": "god of war ragnarok.avif", "link": "https://www.playstation.com/it-it/games/god-of-war-ragnarok/", "prezzo": 60},
 
     {"titolo": "Skyrim", "descrizione": " Un RPG senza tempo che ti immerge nel mondo di Tamriel, dove potrai esplorare, combattere draghi e forgiare il tuo destino.", "categoria": "RPG", "dataPubblicazione": "12/10/2002", "copertina": "skyrim.webp", "link": "https://www.playstation.com/it-it/games/the-elder-scrolls-v-skyrim/", "prezzo": 20},
 
     {"titolo": "EA Sports Fc25", "descrizione": "L’evoluzione del calcio virtuale, con una grafica migliorata e un gameplay realistico per i veri appassionati dello sport.", "categoria": "Sport", "dataPubblicazione": "12/10/2002", "copertina": "fc 25.jpg", "link": "https://www.playstation.com/it-it/games/ea-sports-fc/", "prezzo": 70},
 
-    {"titolo": "Minecraft", "descrizione": "Un gioco sandbox infinito in cui puoi costruire, esplorare e sopravvivere in mondi generati proceduralmente.", "categoria": "Open world", "dataPubblicazione": "12/10/2002", "copertina": "minecraft.png", "link": "https://store.playstation.com/it-it/product/EP0001-CUSA01788_00-RAINBOWSIXSIEGE", "prezzo": 20},
+    {"titolo": "Minecraft", "descrizione": "Un gioco sandbox infinito in cui puoi costruire, esplorare e sopravvivere in mondi generati proceduralmente.", "categoria": "Open world", "dataPubblicazione": "12/10/2002", "copertina": "minecraft.png", "link": "https://www.playstation.com/it-it/games/minecraft/", "prezzo": 20},
 
     {"titolo": "The Last Of US", "descrizione": "Un'avventura intensa e commovente che esplora temi di vendetta, dolore e sopravvivenza in un mondo post-apocalittico.", "categoria": "Surviving", "dataPubblicazione": "12/10/2002", "copertina": "tlou.avif", "link": "https://www.playstation.com/it-it/games/the-last-of-us-part-ii-remastered/", "prezzo": 80},
 
     {"titolo": "Read Dead Redemption ll", "descrizione": "Ambientato nel 1899, segue la storia di Arthur Morgan, un fuorilegge in fuga dal cambiamento del selvaggio West.", "categoria": "Open world", "dataPubblicazione": "12/10/2002", "copertina": "rdr2.avif", "link": "https://www.playstation.com/it-it/games/red-dead-redemption-2/", "prezzo": 50},
 
-    {"titolo": "Rainbow Six Siege", "descrizione": "E' un gioco tattico in prima persona che mette i giocatori nei panni di operazioni speciali di élite in scenari di assalto e difesa.", "categoria": "Sparatutto", "dataPubblicazione": "12/10/2002", "copertina": "r6.avif", "link": "https://store.playstation.com/it-it/product/EP0001-CUSA01788_00-RAINBOWSIXSIEGE", "prezzo": 20},
+    {"titolo": "Rainbow Six Siege", "descrizione": "Rainbow Six Siege è un gioco tattico multiplayer in prima persona dove i giocatori assumono il ruolo di membri delle forze speciali in scenari di assalto e difesa, con un forte focus sulla strategia e la cooperazione.", "categoria": "Sparatutto", "dataPubblicazione": "12/10/2002", "copertina": "r6.avif", "link": "https://store.playstation.com/it-it/product/EP0001-CUSA01788_00-RAINBOWSIXSIEGE", "prezzo": 20},
 
-    {"titolo": "Black Ops 6", "descrizione": "E' un gioco tattico in prima persona che mette i giocatori nei panni di operazioni speciali di élite in scenari di assalto e difesa.", "categoria": "Sparatutto", "dataPubblicazione": "12/10/2002", "copertina": "bo6.jpg", "link": "https://store.playstation.com/it-it/product/EP0001-CUSA01788_00-RAINBOWSIXSIEGE", "prezzo": 100}
+    {"titolo": "Call of Duty: Black Ops Cold War", "descrizione": "Call of Duty: Black Ops è un gioco sparatutto in prima persona che offre una campagna intensa, modalità multiplayer competitive e una modalità Zombies.", "categoria": "Sparatutto", "dataPubblicazione": "12/10/2002", "copertina": "bo6.jpg", "link": "https://www.playstation.com/it-it/games/call-of-duty-black-ops-cold-war/", "prezzo": 100}
 
 
 ]

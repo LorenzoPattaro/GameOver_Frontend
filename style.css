@@ -66,7 +66,7 @@ body {
   background-attachment: fixed;
   background-position: center;
   overflow-x: hidden; /* Nasconde il contenuto che eccede a destra */
-  min-height: 100vh;
+  /* min-height: 100vh; */
 
   position: relative
 }
@@ -294,6 +294,41 @@ h2 {
 .border-bottom-custom{
     border-bottom: var(--color-p) 20px groove;
 }
+
+footer {
+    margin-top: 100px;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+}
+
+.footer-content p {
+    margin: 0;
+    font-size: 20px;
+}
+
+.footer-links {
+    list-style: none;
+    padding: 0;
+    margin: 10px 0 0;
+}
+
+.footer-links li {
+    display: inline;
+    margin: 0 15px;
+}
+
+.footer-links a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.footer-links a:hover {
+    text-decoration: underline;
+    color: cyan;
+}
+
 
 
 /* MEDIA QUERY PER SMARTPHONE */

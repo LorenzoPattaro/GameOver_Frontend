@@ -22,9 +22,12 @@ function visualizzazioneCards (array) {
                     </figure>
                     
                     <div class="card-body m-0">
-                    <h4 class="card-title title color-s text-color-p-shadow fw-bold pb-3 mb-3 border-bottom border-2 ">${card.titolo}</h5>
-                    <p class="card-text color-s">
+                    <h4 class="card-title title color-s text-color-p-shadow fw-bold pb-3 mb-3 border-bottom border-2 text-truncate">${card.titolo}</h5>
+                    <p class="card-text color-s text-truncate">
                         ${card.descrizione}
+                    </p>
+                    <p class="card-text color-s fw-bold">
+                        ${card.prezzo}€
                     </p>
                     <a href=${card.link} target="_blank" class="btn btn-outline-p">Più Informazioni</a>
                     </div>
